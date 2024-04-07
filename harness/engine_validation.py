@@ -60,6 +60,7 @@ def verify_task_instances(data: dict):
                 in SKIP_INSTANCES[task_instance["repo"]]
             ):
                 continue
+            # breakpoint()
             if (
                 not tcm.reset_task_env(task_instance)
                 or not tcm.run_install_task(task_instance)

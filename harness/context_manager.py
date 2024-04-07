@@ -342,7 +342,6 @@ class TestbedContextManager:
                     logger_testbed.info(
                         f"[Testbed] Installing environment dependencies {pkgs}; Command: {full_cmd}"
                     )
-                    # breakpoint()
                     self.exec(
                         full_cmd, 
                         shell=True,
@@ -558,8 +557,8 @@ class TaskEnvContextManager:
                     f"[{self.testbed_name}] [{instance[KEY_INSTANCE_ID]}] Running pre-install setup command: {cmd_pre_install}"
                 )
                 out_pre_install = self.exec(
-                    cmd_pre_install, 
-                    timeout=self.timeout, 
+                    cmd_pre_install,
+                    timeout=self.timeout,
                     shell=True,
                     executable="/bin/bash",
                     env=None
@@ -586,7 +585,7 @@ class TaskEnvContextManager:
         )
         try:
             # Run installation command
-            # breakpoint()
+            breakpoint()
             out_install = self.exec(cmd_install, timeout=self.timeout, shell=True, executable="/bin/bash", env=None)
 
             # Write installation logs to log file

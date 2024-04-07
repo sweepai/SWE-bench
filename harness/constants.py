@@ -10,7 +10,7 @@ MAP_VERSION_TO_INSTALL_SKLEARN.update(
     {
         k: {
             "python": "3.7",
-            "packages": "numpy scipy Cython==0.29 pytest pandas matplotlib",
+            "packages": "numpy scipy Cython==0.29.33 pytest pandas matplotlib",
             "install": "pip install -v --no-use-pep517 --no-build-isolation -e .",
         }
         for k in ["0.21", "0.22", "0.23", "0.24"]
@@ -19,8 +19,8 @@ MAP_VERSION_TO_INSTALL_SKLEARN.update(
 MAP_VERSION_TO_INSTALL_SKLEARN.update(
     {
         k: {
-            "python": "3.9",
-            "packages": "numpy scipy Cython==0.29 pytest pandas matplotlib joblib threadpoolctl",
+            "python": "3.8",
+            "packages": "numpy scipy Cython==0.29.33 pytest pandas matplotlib joblib threadpoolctl",
             "install": "pip install -v --no-use-pep517 --no-build-isolation -e .",
         }
         for k in ["1.0", "1.1", "1.2", "1.3", "1.4"]
