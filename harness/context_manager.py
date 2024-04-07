@@ -342,7 +342,14 @@ class TestbedContextManager:
                     logger_testbed.info(
                         f"[Testbed] Installing environment dependencies {pkgs}; Command: {full_cmd}"
                     )
-                    self.exec(full_cmd, shell=True)
+                    # breakpoint()
+                    self.exec(
+                        full_cmd, 
+                        shell=True,
+                        executable="/bin/bash",
+                        timeout=self.timeout,
+                        env=None
+                    )
 
                 # Install additional packages if specified
                 if "pip_packages" in install:
@@ -692,6 +699,15 @@ class TaskEnvContextManager:
             # test_cmd = test_cmd.replace("./tests/runtests.py ", "pip install -e . && ./tests/runtests.py --parallel=1 ") # Fix Django installs
             with open(self.log_file, "a") as f:
                 f.write(f"Test Script: {test_cmd};\n")
+            print(self.exec(
+                "pwd",
+                shell=True,
+                timeout=self.timeout,
+                check=False,
+                executable="/bin/bash",
+                text=True,
+                env=None
+            ))
             breakpoint()
             out_test = self.exec(
                 test_cmd,
