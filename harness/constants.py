@@ -1,3 +1,4 @@
+# Note: Need build-esential for sklearn to work properly
 MAP_VERSION_TO_INSTALL_SKLEARN = {
     k: {
         "python": "3.6",

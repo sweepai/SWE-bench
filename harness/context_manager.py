@@ -695,7 +695,6 @@ class TaskEnvContextManager:
         try:
             # Run test command for task instance
             test_cmd = f"{self.cmd_activate} && {instance['test_cmd']}"
-            # test_cmd = test_cmd.replace("./tests/runtests.py ", "pip install -e . && ./tests/runtests.py --parallel=1 ") # Fix Django installs
             with open(self.log_file, "a") as f:
                 f.write(f"Test Script: {test_cmd};\n")
             print(self.exec(
@@ -707,7 +706,7 @@ class TaskEnvContextManager:
                 text=True,
                 env=None
             ))
-            breakpoint()
+            # breakpoint()
             out_test = self.exec(
                 test_cmd,
                 shell=True,
